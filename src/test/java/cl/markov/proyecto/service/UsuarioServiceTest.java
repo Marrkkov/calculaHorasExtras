@@ -43,5 +43,10 @@ public class UsuarioServiceTest {
 	public void crearAdministrador() {
 	//crea un usuario con rol administrador, checkea el rol del usuario creado, debe ser rol admin.	
 	}
+	
+	@Test
+	public void buscar() {
+		//busca un usuario y lo muestra
+	}
 }
 	

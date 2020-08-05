@@ -44,4 +44,23 @@ public class HoraExtraServiceTest {
 		assertTrue(true);
 		
 	}
+	
+	@Test 
+	public void eliminarHora() {
+		//Elimina una hora extra, la busca y no debe encontrar nada.
+		assertTrue(true);
+	}
+	
+	@Test
+	public void modificarHora() {
+	//debe modificar una hora, eliminando el dato que existia antes y luego al ser consultado
+		//mostrar los nuevos datos ingresados
+		
+		assertTrue(true); 
+	}
+	
+	@Test
+	public void buscar() {
+		//busca una hora y lo muestra
+	}
 }
