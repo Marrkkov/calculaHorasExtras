@@ -1,4 +1,4 @@
-package cl.markov.config;
+package cl.markov.proyecto.config;
 
 import javax.sql.DataSource;
 

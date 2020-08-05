@@ -1,4 +1,4 @@
-package cl.markov.config;
+package cl.markov.proyecto.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

@@ -1,4 +1,4 @@
-package cl.markov.config;
+package cl.markov.proyecto.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
@@ -10,7 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
-import cl.markov.service.AuthServiceImpl;
+import cl.markov.proyecto.service.AuthServiceImpl;
 
 
 @EnableWebSecurity

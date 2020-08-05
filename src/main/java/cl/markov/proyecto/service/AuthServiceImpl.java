@@ -1,4 +1,4 @@
-package cl.markov.service;
+package cl.markov.proyecto.service;
 
 import java.util.Arrays;
 import java.util.List;

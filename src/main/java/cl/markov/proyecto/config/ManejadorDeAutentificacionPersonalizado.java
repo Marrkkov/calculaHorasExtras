@@ -1,4 +1,4 @@
-package cl.markov.config;
+package cl.markov.proyecto.config;
 
 import java.io.IOException;
 import java.util.Set;
