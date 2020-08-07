@@ -62,7 +62,7 @@
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Reconocido como:</div>
-                    Hola
+                     <c:out value="${correo}"></c:out>
                 </div>
             </nav>
         </div>
@@ -100,9 +100,8 @@
 								<tr>
 									<th scope="row">${usuario.id}</th>
 									<td>${usuario.nombre}</td>
-									<td>${usuario.correo}</td>
+									<td>${usuario.rut}</td>
 									<td>${usuario.contrasenia}</td>
-									<td><img width="100" height="100" src="<c:url value='${usuario.urlImagen}'></c:url>" class="rounded" alt="${usuario.urlImagen}" /></td>
 									<td>
 									<a href='javascript:actualizar(${usuario.toJson()})'>Actualizar</a> | 
 									<a href='javascript:eliminar(${usuario.toJson()})'>Eliminar</a>
@@ -142,9 +141,8 @@
 								<tr>
 									<th scope="row">${usuario.id}</th>
 									<td>${usuario.nombre}</td>
-									<td>${usuario.correo}</td>
+									<td>${usuario.rut}</td>
 									<td>${usuario.contrasenia}</td>
-									<td><img width="100" height="100" src="<c:url value='${usuario.urlImagen}'></c:url>" class="rounded" alt="${usuario.urlImagen}" /></td>
 									<td>
 									<a href='javascript:actualizar(${usuario.toJson()})'>Actualizar</a> | 
 									<a href='javascript:eliminar(${usuario.toJson()})'>Eliminar</a>

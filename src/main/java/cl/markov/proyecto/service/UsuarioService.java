@@ -1,11 +1,13 @@
 package cl.markov.proyecto.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 import cl.markov.proyecto.model.dao.UsuarioDao;
 import cl.markov.proyecto.model.entity.Rol;
@@ -21,7 +23,7 @@ public class UsuarioService {
 
 	public Usuario registrarUsuario(Usuario usuario) {
 
-		Usuario usuarioEnBase = dao.findByRut(usuario.getCorreo()).orElse(null);
+		Usuario usuarioEnBase = dao.findByRut(usuario.getRut()).orElse(null);
 
 		if (usuarioEnBase != null) {
 
@@ -68,5 +70,7 @@ public class UsuarioService {
 
 	public Usuario buscar(Integer id) {
 		return dao.findById(id).orElse(null);
+	
 	}
+
 }

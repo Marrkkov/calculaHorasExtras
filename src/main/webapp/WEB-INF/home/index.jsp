@@ -75,8 +75,9 @@
                     <p><div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 					<div class="active-purple-3 active-purple-4 mb-4">
 					
-					<form action="/detalle">
-						<input class="form-control" type="text" placeholder="Ingrese Rut del Trabajador"
+					<form id="formulario" action="<c:url value='/detalle'/>" method="post"
+						enctype="multipart/form-data">
+						<input id="rut" name="rut" class="form-control"  type="text" placeholder="Ingrese Rut del Trabajador"
 							aria-label="Search">
 					<button type="submit" class="btn btn-primary">Buscar Rut</button>
 					</form>

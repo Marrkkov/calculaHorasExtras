@@ -10,6 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import cl.markov.proyecto.config.EncoderUtils;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -43,4 +46,17 @@ public class Usuario {
 		
 		return this;
 	}
+	
+	 public String toJson() {
+	        Usuario aux = new Usuario(id, nombre, rut, correo, contrasenia, rol, horasExtras);
+	        ObjectMapper mapper = new ObjectMapper();
+	        String jsonString = null;
+	        try {
+	            jsonString = mapper.writeValueAsString(aux);
+	        } catch (JsonProcessingException e) {
+	            e.printStackTrace();
+	        }
+	        
+	        return jsonString;
+	    }
 }

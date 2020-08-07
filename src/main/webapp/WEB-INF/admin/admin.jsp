@@ -59,7 +59,7 @@
                     <a class="dropdown-item" href="/logout">Logout</a>
                 </div>
             </li>
-            <!-- Menú usuario ️¸#-->
+            <!-- Menú usuario ️¸-->
         </ul>
     </nav>
     <!-- Menú superior ️¸#-->
@@ -135,8 +135,8 @@
 						</div>
 
 						<div class="form-group col-12">
-							<label for="modelo">Rut</label> <input id="correo"
-								name="correo" type="email" class="form-control" />
+							<label for="modelo">Rut</label> <input id="rut"
+								name="rut" type="text" class="form-control" />
 						</div>
 
 						<button id="boton" type="submit" class="btn btn-primary">Ingresar</button>
@@ -216,9 +216,9 @@
 								<tr>
 									<th scope="row">${usuario.id}</th>
 									<td>${usuario.nombre}</td>
-									<td>${usuario.correo}</td>
-									<td>${usuario.contrasenia}</td>
-									<td><img width="100" height="100" src="<c:url value='${usuario.urlImagen}'></c:url>" class="rounded" alt="${usuario.urlImagen}" /></td>
+									<td>${usuario.rut}</td>
+									<td>${mes}</td>
+									<td>${horastotales}</td>
 									<td>
 									<a href='javascript:actualizar(${usuario.toJson()})'>Actualizar</a> | 
 									<a href='javascript:eliminar(${usuario.toJson()})'>Eliminar</a>

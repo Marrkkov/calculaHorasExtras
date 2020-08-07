@@ -8,6 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,4 +34,17 @@ public class HoraExtra {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "usuario_id")
 	@Setter @Getter private Usuario usuario;
+	
+	 public String toJson() {
+	        HoraExtra aux = new HoraExtra(id, fecha, horaEntrada, horaSalida, horasExtras, usuario);
+	        ObjectMapper mapper = new ObjectMapper();
+	        String jsonString = null;
+	        try {
+	            jsonString = mapper.writeValueAsString(aux);
+	        } catch (JsonProcessingException e) {
+	            e.printStackTrace();
+	        }
+	        
+	        return jsonString;
+	    }
 }
