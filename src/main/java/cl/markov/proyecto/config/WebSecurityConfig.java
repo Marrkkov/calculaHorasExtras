@@ -66,7 +66,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
         .authorizeRequests()
         //acceso a direcctorios
         .antMatchers("/admin/**").hasRole("ADMIN") // no es ROLE_ADMIN ni ROLE_USER (sin el ROLE_)
-        .antMatchers("/login").permitAll()
+        .antMatchers(
+        		"/home/**",
+        		"/trabajadores/**",
+        		"/css/**",
+        		"/assets/**",
+        		"/fonts/**",
+        		"/img/**",
+        		"/js/**",
+        		"/login").permitAll()
         // permite el uso de los recursos estáticos
         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
         // para todo el resto de peticiones, permite, si está logeado
@@ -89,4 +97,3 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     }
     
 }
-

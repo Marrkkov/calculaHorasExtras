@@ -62,7 +62,7 @@
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Reconocido como:</div>
-                    <c:out value="${nombre}"></c:out>
+                    <c:out value="${correo}"></c:out>
                 </div>
             </nav>
         </div>

@@ -6,6 +6,27 @@
 <html lang="en">
 
 <head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 15px;
+  height: 330px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -67,7 +88,7 @@
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Reconocido como:</div>
-                    Hola
+                    <c:out value="${correo}"></c:out>
                 </div>
             </nav>
         </div>
@@ -77,7 +98,7 @@
         <div id="layoutSidenav_content">
             <main>
 
-	<div class="container">
+	
 		<div class="row my-5">
 			<div class="col-2"></div>
 			<div class="col-8">
@@ -94,27 +115,78 @@
 							</button>
 						</div>
 					</c:if>
+	
+<div class="row">
 
-
-					<h3>Agregar Trabajador</h3>
+  <div class="column" style="background-color:#aaa;">
+   
+<h4>Agregar Trabajador</h4>
 					<hr>
 					<form id="formulario" action="<c:url value='/usuarios'/>" method="post"
 						enctype="multipart/form-data">
 						
-						<div class="form-group col-6">
+						<div class="row">
+
+  						<div class="column">
+  						
+						<div class="form-group col-12">
 							<label for="marca">Nombre</label> <input id="nombre" name="nombre"
 								type="text" class="form-control" />
 						</div>
 
-						<div class="form-group col-6">
+						<div class="form-group col-12">
 							<label for="modelo">Rut</label> <input id="correo"
 								name="correo" type="email" class="form-control" />
 						</div>
 
-						<button id="boton" type="submit" class="btn btn-primary">Guardar</button>
+						<button id="boton" type="submit" class="btn btn-primary">Ingresar</button>
+						
+						</div>
+						</div>
+						
 					</form>
-				</div>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+   
+   <h4>Agregar Hora Extra</h4>
+				<hr>
+				<form id="formulario" action="<c:url value='/horaExtra'/>" method="post"
+						enctype="multipart/form-data">
+						
+						<div class="row">
 
+  						<div class="column">
+						<div class="form-group col-12">
+							<label for="marca"> Rut  </label> <input id="rut" name="rut"
+								type="text" class="form-control" />
+						</div>
+
+						<div class="form-group col-12">
+							<label for="modelo">Fecha</label> <input id="fecha"
+								name="fecha" type="text" class="form-control" />
+						</div>
+						<button id="boton" type="submit" class="btn btn-primary">Ingresar</button>
+						
+						</div>
+						<div class="column">
+						<div class="form-group col-12">
+							<label for="modelo">Hora Entrada</label> <input id="horaEntrada"
+								name="horaEntrada" type="text" class="form-control" />
+						</div>
+						
+						<div class="form-group col-12">
+							<label for="modelo">Hora Salida</label> <input id="horaSalida"
+								name="horaSalida" type="text" class="form-control" />
+						</div>
+						</div>
+
+						
+						</div>
+						
+						
+					</form>
+  </div>
+</div>
 				<!-- Formulario # -->
 				<hr>
 				<!-- TABLA DE AUTOMOVIL -->
