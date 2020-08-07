@@ -20,24 +20,29 @@ public class HoraExtraServiceTest {
 		
 	}
 	
+	@Test
 	public void cargarHorasExtras () {
 		//importa los usuarios y las horas extras de un archivo excel entregado por el reloj control de la empresa.
 		
 		assertTrue(true);
 		
 	}
+	
+	@Test
 	public void sumarHorasExtra () {
 		//realiza suma de horas extras de un trabajador pertenecientes a un mismo mes y anio.
 		
 		assertTrue(true);
 	}
 	
+	@Test
 	public void llenarHorasExtrasTotales() {
 		//debe traer la lista de todos las horas extras y mostrarla
 				
 		assertTrue(true);
 	}
 	
+	@Test
 	public void llenarHorasExtrasMensuales() {
 		//debe traer la lista de todos las horas extras mensuales y mostrarla
 				

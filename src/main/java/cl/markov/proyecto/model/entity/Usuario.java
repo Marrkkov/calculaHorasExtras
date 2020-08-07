@@ -30,16 +30,15 @@ public class Usuario {
 	@Setter @Getter private String correo;
 	@Getter private String contrasenia;
 	@Setter @Getter private Rol rol;
-	@Setter @Getter private List<HoraExtra> horasExtras = new ArrayList<>();
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario", orphanRemoval = true)
+	@Setter @Getter private List<HoraExtra> horasExtras = new ArrayList<>();
 
 	public void setContrasenia(String contrasenia) {
 		this.contrasenia = EncoderUtils.passwordEncoder().encode(contrasenia);
 	}
 	
-	public Usuario agregarHoraExtra(HoraExtra horaExtra) {
-		
+	public Usuario agregarHoraExtra(HoraExtra horaExtra) {		
 		this.horasExtras.add(horaExtra);
 		
 		return this;

@@ -48,25 +48,25 @@
 												</button>
 											</div>
 										<!--|== Fin - Mensaje error =========================|-->
-									<form action="#" method="post">
+									<form action="<c:url value='/login' />" method="post">
 
 										<div class="form-group">
 											<label class="small mb-1" for="inputEmailAddress">Correo</label>
-											<input id="email" name="email" class="form-control py-4"
+											<input id="correo" name="correo" class="form-control py-4"
 												id="inputEmailAddress" type="email"
 												placeholder="Ingrese su correo" />
 										</div>
 
 										<div class="form-group">
 											<label class="small mb-1" for="inputPassword">Contraseña</label>
-											<input id="password" name="password"
+											<input id="contrasenia" name="contrasenia"
 												class="form-control py-4" id="inputPassword" type="password"
 												placeholder="Ingrese su contraseña" />
 										</div>
 
 										<div
 											class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-											<button class="btn btn-primary" type="submit" href="/admin" >Ingresar</button>
+											<button class="btn btn-primary" type="submit">Ingresar</button>
 										</div>
 									</form>
 									<!--|== Fin - Formulario ======================|-->
