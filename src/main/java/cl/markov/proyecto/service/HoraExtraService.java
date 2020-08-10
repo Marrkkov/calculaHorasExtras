@@ -34,7 +34,7 @@ public class HoraExtraService {
 		return horaExtra;
 	}
 	
-	public List<HoraExtra> cargarHorasExtras () {
+	public List<HoraExtra> llenarHorasExtras () {
 			
 		return dao.findAll();
 		

@@ -68,6 +68,11 @@ public class UsuarioService {
 		return usuario;
 	}
 
+	public Optional <Usuario> buscarRut(Usuario usuario) {
+		
+		return dao.findByRut(usuario.getRut());
+	}
+	
 	public Usuario buscar(Integer id) {
 		return dao.findById(id).orElse(null);
 	
