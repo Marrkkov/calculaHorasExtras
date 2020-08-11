@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cl.markov.proyecto.model.dao.HoraExtraDao;
+import cl.markov.proyecto.model.dto.HorasRutDto;
 import cl.markov.proyecto.model.entity.HoraExtra;
+import cl.markov.proyecto.model.entity.Usuario;
 
 
 @Service
@@ -19,20 +21,25 @@ public class HoraExtraService {
 	@Autowired
 	private HoraExtraDao dao;
 
-	public HoraExtra agregarHoraExtra(HoraExtra horaExtra) {
+	public HorasRutDto agregarHoraExtra(HorasRutDto horasRutDto) {
 
-		HoraExtra horaEnBase = dao.findByFecha(horaExtra.getFecha()).orElse(null);
+		HoraExtra horaEnBase = dao.findByFecha(horasRutDto.getFecha()).orElse(null);
+		
+		
 
 		if (horaEnBase != null) {
 
 			logger.warn("El registro del dia que desea ingresar ya existe");
 		} else {
 
-			dao.save(horaExtra);
+			Usuario usuario = new Usuario();
+			usuario.setRut(horasRutDto.getRut());
+			
+			dao.save(horasRutDto);
 		}
 
-		return horaExtra;
-	}
+		return horasRutDto;
+	} 
 	
 	public List<HoraExtra> llenarHorasExtras () {
 			

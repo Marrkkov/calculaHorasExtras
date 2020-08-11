@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import cl.markov.proyecto.model.dto.HorasRutDto;
 import cl.markov.proyecto.model.entity.HoraExtra;
 import cl.markov.proyecto.model.entity.Usuario;
 import cl.markov.proyecto.service.HoraExtraService;
@@ -53,7 +54,10 @@ public class HoraExtraController {
 	    @PostMapping
 	    public String ingresar(
 	        RedirectAttributes atributos,
-	        @ModelAttribute HoraExtra horaExtra) {
+	        @ModelAttribute HorasRutDto horaExtra) {
+	    	
+	    	Usuario usuario = new Usuario();
+	    	usuario.setNombre(HorasRutDto.getNombre();
 	        HoraExtra Horarespuesta = servicio.agregarHoraExtra(horaExtra); 
 	     
 	        
