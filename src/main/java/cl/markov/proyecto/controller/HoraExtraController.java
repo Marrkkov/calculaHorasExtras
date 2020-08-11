@@ -60,14 +60,13 @@ public class HoraExtraController {
 	    	
 	    	Usuario usuario = servicioUsuario.buscar(horaExtra.getRut());
 	    	
-	    	
-	        HoraExtra Horarespuesta = servicio.agregarHoraExtra(horaExtra); 
+	        HoraExtra Horarespuesta = servicio.agregarHoraExtra(horaExtra, usuario); 
 	     
 	        
 	        atributos.addFlashAttribute(
 	            "mensaje", 
 	            "Usuario: " 
-	           // + Usuariorespuesta.getRut()
+	            + usuario.getRut()
 	            + "fecha: "
 	            + Horarespuesta.getFecha()
 	            + ", ingresado."

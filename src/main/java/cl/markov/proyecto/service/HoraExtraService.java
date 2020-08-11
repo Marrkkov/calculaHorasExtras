@@ -35,10 +35,8 @@ public class HoraExtraService {
 	
 		dao.save(respuesta);
 		
-		
 		HoraExtra horaEnBase = dao.findByFecha(horasRutDto.getFecha()).orElse(null);
 		
-
 		if (horaEnBase != null) {
 
 			logger.warn("El registro del dia que desea ingresar ya existe");
