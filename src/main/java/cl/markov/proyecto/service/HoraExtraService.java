@@ -33,25 +33,20 @@ public class HoraExtraService {
 		respuesta.setHorasExtras(horasRutDto.getHorasExtras());
 		respuesta.setUsuario(usuario);
 	
-		dao.save(repuesta);
+		dao.save(respuesta);
 		
 		
 		HoraExtra horaEnBase = dao.findByFecha(horasRutDto.getFecha()).orElse(null);
-		
 		
 
 		if (horaEnBase != null) {
 
 			logger.warn("El registro del dia que desea ingresar ya existe");
 		} else {
-
-			Usuario usuario = new Usuario();
-			usuario.setRut(horasRutDto.getRut());
-			
-			dao.save(horasRutDto);
-		}
+	
 
 		return horasRutDto;
+		}
 	} 
 	
 	public List<HoraExtra> llenarHorasExtras () {
