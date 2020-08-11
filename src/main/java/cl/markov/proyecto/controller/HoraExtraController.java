@@ -24,6 +24,8 @@ public class HoraExtraController {
 
 	    @Autowired
 	    private HoraExtraService servicio;
+	    @Autowired
+	    private UsuarioService servicioUsuario;
 	    
 	    @GetMapping
 	    public String home(
@@ -56,8 +58,9 @@ public class HoraExtraController {
 	        RedirectAttributes atributos,
 	        @ModelAttribute HorasRutDto horaExtra) {
 	    	
-	    	Usuario usuario = new Usuario();
-	    	usuario.setNombre(HorasRutDto.getNombre();
+	    	Usuario usuario = servicioUsuario.buscar(horaExtra.getRut());
+	    	
+	    	
 	        HoraExtra Horarespuesta = servicio.agregarHoraExtra(horaExtra); 
 	     
 	        

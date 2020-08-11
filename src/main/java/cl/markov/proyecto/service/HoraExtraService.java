@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cl.markov.proyecto.model.dao.HoraExtraDao;
+import cl.markov.proyecto.model.dao.UsuarioDao;
 import cl.markov.proyecto.model.dto.HorasRutDto;
 import cl.markov.proyecto.model.entity.HoraExtra;
 import cl.markov.proyecto.model.entity.Usuario;
@@ -17,12 +18,24 @@ import cl.markov.proyecto.model.entity.Usuario;
 public class HoraExtraService {
 	
 	private Logger logger = LoggerFactory.getLogger(UsuarioService.class);
-
+	
 	@Autowired
 	private HoraExtraDao dao;
+	@Autowired
+	private UsuarioDao usuarioDao;
 
-	public HorasRutDto agregarHoraExtra(HorasRutDto horasRutDto) {
+	public HoraExtra agregarHoraExtra(HorasRutDto horasRutDto, Usuario usuario) {
 
+		HoraExtra respuesta = new HoraExtra();
+		respuesta.setFecha(horasRutDto.getFecha());
+		respuesta.setHoraEntrada(horasRutDto.getHoraEntrada());
+		respuesta.setHoraSalida(horasRutDto.getHoraSalida());
+		respuesta.setHorasExtras(horasRutDto.getHorasExtras());
+		respuesta.setUsuario(usuario);
+	
+		dao.save(repuesta);
+		
+		
 		HoraExtra horaEnBase = dao.findByFecha(horasRutDto.getFecha()).orElse(null);
 		
 		

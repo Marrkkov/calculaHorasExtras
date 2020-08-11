@@ -77,5 +77,9 @@ public class UsuarioService {
 		return dao.findById(id).orElse(null);
 	
 	}
-
+	
+	public Usuario buscar(String rut) {
+		return dao.findByRut(rut).orElse(null);
+		
+	}
 }

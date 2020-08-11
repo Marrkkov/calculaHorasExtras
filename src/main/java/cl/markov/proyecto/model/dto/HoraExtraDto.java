@@ -19,4 +19,5 @@ import lombok.ToString;
 public class HoraExtraDto {
     private HoraExtra horas;
     private List<HoraExtra> horasExtras;
+    private String mensaje;
 }
