@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cl.markov.proyecto.model.dao.HoraExtraDao;
-import cl.markov.proyecto.model.dao.UsuarioDao;
 import cl.markov.proyecto.model.dto.HorasRutDto;
 import cl.markov.proyecto.model.entity.HoraExtra;
 import cl.markov.proyecto.model.entity.Usuario;
@@ -21,30 +20,25 @@ public class HoraExtraService {
 	
 	@Autowired
 	private HoraExtraDao dao;
-	@Autowired
-	private UsuarioDao usuarioDao;
 
 	public HoraExtra agregarHoraExtra(HorasRutDto horasRutDto, Usuario usuario) {
-
-		HoraExtra respuesta = new HoraExtra();
-		respuesta.setFecha(horasRutDto.getFecha());
-		respuesta.setHoraEntrada(horasRutDto.getHoraEntrada());
-		respuesta.setHoraSalida(horasRutDto.getHoraSalida());
-		respuesta.setHorasExtras(horasRutDto.getHorasExtras());
-		respuesta.setUsuario(usuario);
-	
-		dao.save(respuesta);
 		
 		HoraExtra horaEnBase = dao.findByFecha(horasRutDto.getFecha()).orElse(null);
 		
+		
 		if (horaEnBase != null) {
-
 			logger.warn("El registro del dia que desea ingresar ya existe");
 		} else {
-	
-
-		return horasRutDto;
+		        HoraExtra respuesta = new HoraExtra();
+		        respuesta.setFecha(horasRutDto.getFecha());
+		        respuesta.setHoraEntrada(horasRutDto.getHoraEntrada());
+		        respuesta.setHoraSalida(horasRutDto.getHoraSalida());
+		        respuesta.setHorasExtras(horasRutDto.getHorasExtras());
+		        respuesta.setUsuario(usuario);
+		    
+		        return dao.save(respuesta);
 		}
+		return null;
 	} 
 	
 	public List<HoraExtra> llenarHorasExtras () {
