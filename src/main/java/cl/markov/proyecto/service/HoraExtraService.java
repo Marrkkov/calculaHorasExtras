@@ -22,8 +22,8 @@ public class HoraExtraService {
 	private HoraExtraDao dao;
 
 	public HoraExtra agregarHoraExtra(HorasRutDto horasRutDto, Usuario usuario) {
-		
-		HoraExtra horaEnBase = dao.findByFecha(horasRutDto.getFecha()).orElse(null);
+
+		HoraExtra	horaEnBase = dao.findByFecha(horasRutDto.getFecha()).orElse(null);
 		
 		
 		if (horaEnBase != null) {

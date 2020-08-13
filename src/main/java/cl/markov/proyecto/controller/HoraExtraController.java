@@ -19,7 +19,7 @@ import cl.markov.proyecto.service.UsuarioService;
 public class HoraExtraController {
 	
 	@Controller
-	@RequestMapping(value = "/horaExtra")
+	@RequestMapping(value = {"/horaExtra", "admin/admin"})
 	public class UsuarioController {
 
 	    @Autowired

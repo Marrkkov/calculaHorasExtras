@@ -163,7 +163,7 @@
 
 						<div class="form-group col-12">
 							<label for="fecha">Fecha</label> <input id="fecha"
-								name="fecha" type="text" class="form-control" />
+								name="fecha" type="date" class="form-control" />
 						</div>
 						<button id="boton" type="submit" class="btn btn-primary">Ingresar</button>
 						
@@ -171,12 +171,12 @@
 						<div class="column">
 						<div class="form-group col-12">
 							<label for="horaEntrada">Hora Entrada</label> <input id="horaEntrada"
-								name="horaEntrada" type="text" class="form-control" />
+								name="horaEntrada" type="time" class="form-control" />
 						</div>
 						
 						<div class="form-group col-12">
 							<label for="horaSalida">Hora Salida</label> <input id="horaSalida"
-								name="horaSalida" type="text" class="form-control" />
+								name="horaSalida" type="time" class="form-control" />
 						</div>
 						</div>
 
